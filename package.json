@@ -1,0 +1,55 @@
+{
+  "name": "react-rich-text",
+  "version": "0.0.1",
+  "description": "A rich text editor for React JS",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/parcel serve ./src/examples/*.html ./src/*.tsx",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdelilah/react-rich-text.git"
+  },
+  "keywords": [
+    "react",
+    "editor",
+    "rich",
+    "text",
+    "markdown",
+    "wysiwyg"
+  ],
+  "author": "Abdelilah Sawab",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abdelilah/react-rich-text/issues"
+  },
+  "homepage": "https://github.com/abdelilah/react-rich-text#readme",
+  "devDependencies": {
+    "@types/draft-js": "^0.10.32",
+    "@types/react": "^16.8.21",
+    "@types/react-dom": "^16.8.4",
+    "parcel-bundler": "^1.12.3",
+    "prettier": "^1.18.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "sass": "^1.21.0",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.2"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "draft-js": "^0.10.5",
+    "markdown-draft-js": "^1.5.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
