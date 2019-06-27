@@ -1,13 +1,13 @@
-import * as React from "react";
-import { EditorState } from "draft-js";
+import * as React from 'react';
+import { EditorState } from 'draft-js';
 
-interface RichTextContext {
-	editorState: EditorState;
-	value: string;
-	setEditorState(editorState: EditorState): any;
-	onChange(editorState: EditorState): any;
+interface IRichTextContext {
+  editorState: EditorState;
+  value: string;
+  setEditorState(editorState: EditorState): any;
+  onChange(editorState: EditorState): any;
 }
 
 const Context = React.createContext(null);
 
-export { Context, RichTextContext };
+export { Context, IRichTextContext };

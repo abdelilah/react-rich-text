@@ -1,3 +1,9 @@
 {
-	"extends": ["tslint:recommended", "tslint-config-prettier"]
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "rules": {
+    "ordered-imports": false,
+    "no-empty": false,
+    "object-literal-sort-keys": false,
+    "no-shadowed-variable": false
+  }
 }

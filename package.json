@@ -3,13 +3,23 @@
   "version": "0.0.1",
   "description": "A rich text editor for React JS",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "start": "./node_modules/.bin/parcel serve ./src/examples/*.html ./src/*.tsx",
-    "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "start": "parcel serve ./examples/*.html",
+    "build": "tsc && ./node_modules/.bin/typedoc --out docs ./src && npm run scss",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "test": "jest"
+    "scss": "node-sass ./src/*.scss -o ./lib/",
+    "test": "jest --config jestconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
+  "files": [
+    "lib/**/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/abdelilah/react-rich-text.git"
@@ -30,15 +40,18 @@
   "homepage": "https://github.com/abdelilah/react-rich-text#readme",
   "devDependencies": {
     "@types/draft-js": "^0.10.32",
+    "@types/jest": "^24.0.15",
     "@types/react": "^16.8.21",
     "@types/react-dom": "^16.8.4",
+    "jest": "^24.8.0",
+    "node-sass": "^4.12.0",
     "parcel-bundler": "^1.12.3",
     "prettier": "^1.18.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "sass": "^1.21.0",
+    "ts-jest": "^24.0.2",
     "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
+    "typedoc": "^0.14.2",
     "typescript": "^3.5.2"
   },
   "dependencies": {

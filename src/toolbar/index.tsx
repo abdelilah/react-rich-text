@@ -1,30 +1,23 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { ToolbarButton } from "./button";
-import { RichTextToolbarButton } from "./button.d";
+import { ToolbarButton } from './button';
+import { RichTextToolbarButton } from './button.d';
 
-interface ToolbarProps {
-	buttons?: RichTextToolbarButton[];
+interface IToolbarProps {
+  buttons?: RichTextToolbarButton[];
 }
 
-const Toolbar = (props: ToolbarProps) => {
-	const { buttons = [] } = props;
+const Toolbar = (props: IToolbarProps): JSX.Element | null => {
+  const { buttons = [] } = props;
 
-	return (
-		buttons.length > 0 && (
-			<div className="rich-text-toolbar">
-				{buttons.map((button, btnIndex) => {
-					return (
-						<ToolbarButton
-							key={`button-${btnIndex}`}
-							button={button}
-						/>
-					);
-				})}
-			</div>
-		)
-	);
+  return buttons.length > 0 ? (
+    <div className="rich-text-toolbar">
+      {buttons.map((button, btnIndex) => {
+        return <ToolbarButton key={`button-${btnIndex}`} button={button} />;
+      })}
+    </div>
+  ) : null;
 };
 
-export { ToolbarProps, Toolbar };
+export { IToolbarProps, Toolbar };
 export default Toolbar;
