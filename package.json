@@ -1,5 +1,5 @@
 {
-  "name": "react-rich-text",
+  "name": "@abdelilah/react-rich-text",
   "version": "0.0.1",
   "description": "A rich text editor for React JS",
   "main": "lib/index.js",
